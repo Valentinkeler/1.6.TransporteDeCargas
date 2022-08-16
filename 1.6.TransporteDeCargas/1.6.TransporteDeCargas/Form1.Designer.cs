@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstCamiones = new System.Windows.Forms.ListBox();
             this.cboTipoCarga = new System.Windows.Forms.ComboBox();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sa = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbtDisponible = new System.Windows.Forms.RadioButton();
+            this.rbtOcupado = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPesoMax = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,15 +43,16 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstCamiones
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(312, 44);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(318, 277);
-            this.listBox1.TabIndex = 0;
+            this.lstCamiones.FormattingEnabled = true;
+            this.lstCamiones.Location = new System.Drawing.Point(312, 44);
+            this.lstCamiones.Name = "lstCamiones";
+            this.lstCamiones.Size = new System.Drawing.Size(318, 277);
+            this.lstCamiones.TabIndex = 0;
             // 
             // cboTipoCarga
             // 
@@ -86,27 +87,27 @@
             this.sa.TabIndex = 4;
             this.sa.Text = "estado";
             // 
-            // radioButton1
+            // rbtDisponible
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(113, 92);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(72, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "disponible";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtDisponible.AutoSize = true;
+            this.rbtDisponible.Location = new System.Drawing.Point(113, 92);
+            this.rbtDisponible.Name = "rbtDisponible";
+            this.rbtDisponible.Size = new System.Drawing.Size(72, 17);
+            this.rbtDisponible.TabIndex = 5;
+            this.rbtDisponible.TabStop = true;
+            this.rbtDisponible.Text = "disponible";
+            this.rbtDisponible.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtOcupado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(210, 92);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 17);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "ocupado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtOcupado.AutoSize = true;
+            this.rbtOcupado.Location = new System.Drawing.Point(210, 92);
+            this.rbtOcupado.Name = "rbtOcupado";
+            this.rbtOcupado.Size = new System.Drawing.Size(67, 17);
+            this.rbtOcupado.TabIndex = 6;
+            this.rbtOcupado.TabStop = true;
+            this.rbtOcupado.Text = "ocupado";
+            this.rbtOcupado.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -127,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 188);
+            this.label4.Location = new System.Drawing.Point(12, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 9;
@@ -177,11 +178,22 @@
             this.button4.Text = "salir";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(138, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
@@ -190,13 +202,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPesoMax);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbtOcupado);
+            this.Controls.Add(this.rbtDisponible);
             this.Controls.Add(this.sa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.cboTipoCarga);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstCamiones);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -207,13 +219,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstCamiones;
         private System.Windows.Forms.ComboBox cboTipoCarga;
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label sa;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbtDisponible;
+        private System.Windows.Forms.RadioButton rbtOcupado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPesoMax;
         private System.Windows.Forms.Label label4;
@@ -222,6 +234,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
     }
 }
 

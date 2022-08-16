@@ -19,6 +19,13 @@ namespace _1._6.TransporteDeCargas
             PesoMaximo = pesoMaximo;
             Carga = new List<carga>();
         }
+        public camion()
+        {
+            Patente = 0;
+            Estado = false;
+            PesoMaximo =    0;
+            Carga = new List<carga>();
+        }
         public  string cargarCamion(carga CargaM)
         {
             int total = 0;
