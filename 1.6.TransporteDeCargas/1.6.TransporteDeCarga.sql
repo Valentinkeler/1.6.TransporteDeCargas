@@ -57,7 +57,7 @@ as
 	end
 
 
-create	procedure	mostrarCamion
+create	procedure	consultarCamion
 as
 	begin	
 		select	*	from	camion
