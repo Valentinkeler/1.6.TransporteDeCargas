@@ -44,9 +44,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.dgvCargas = new System.Windows.Forms.DataGridView();
             this.tx = new System.Windows.Forms.Button();
-            this.idCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesot = new System.Windows.Forms.Label();
+            this.txtPesoTotal = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quitar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,21 +148,21 @@
             this.txtPesoCarga.Name = "txtPesoCarga";
             this.txtPesoCarga.Size = new System.Drawing.Size(100, 20);
             this.txtPesoCarga.TabIndex = 10;
-            this.txtPesoCarga.TextChanged += new System.EventHandler(this.txtPesoCarga_TextChanged);
+            //this.txtPesoCarga.TextChanged += new System.EventHandler(this.txtPesoCarga_TextChanged);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(91, 458);
+            this.button5.Location = new System.Drawing.Point(87, 494);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 32);
             this.button5.TabIndex = 17;
             this.button5.Text = "nuevo";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            //this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(272, 458);
+            this.button2.Location = new System.Drawing.Point(272, 494);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 19;
@@ -169,7 +172,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(465, 458);
+            this.button4.Location = new System.Drawing.Point(465, 494);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 32);
             this.button4.TabIndex = 21;
@@ -180,13 +183,15 @@
             // 
             this.dgvCargas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCargas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCarga,
+            this.ID,
             this.colTipoCarga,
-            this.ColPeso});
-            this.dgvCargas.Location = new System.Drawing.Point(91, 247);
+            this.ColPeso,
+            this.quitar});
+            this.dgvCargas.Location = new System.Drawing.Point(99, 265);
             this.dgvCargas.Name = "dgvCargas";
-            this.dgvCargas.Size = new System.Drawing.Size(443, 150);
+            this.dgvCargas.Size = new System.Drawing.Size(441, 150);
             this.dgvCargas.TabIndex = 22;
+            this.dgvCargas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargas_CellContentClick);
             // 
             // tx
             // 
@@ -198,29 +203,54 @@
             this.tx.UseVisualStyleBackColor = true;
             this.tx.Click += new System.EventHandler(this.tx_Click);
             // 
-            // idCarga
+            // pesot
             // 
-            this.idCarga.HeaderText = "id";
-            this.idCarga.Name = "idCarga";
-            this.idCarga.Visible = false;
+            this.pesot.AutoSize = true;
+            this.pesot.Location = new System.Drawing.Point(380, 441);
+            this.pesot.Name = "pesot";
+            this.pesot.Size = new System.Drawing.Size(56, 13);
+            this.pesot.TabIndex = 24;
+            this.pesot.Text = "peso total:";
+            // 
+            // txtPesoTotal
+            // 
+            this.txtPesoTotal.Enabled = false;
+            this.txtPesoTotal.Location = new System.Drawing.Point(442, 441);
+            this.txtPesoTotal.Name = "txtPesoTotal";
+            this.txtPesoTotal.Size = new System.Drawing.Size(98, 20);
+            this.txtPesoTotal.TabIndex = 25;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // colTipoCarga
             // 
             this.colTipoCarga.HeaderText = "TipoCarga";
             this.colTipoCarga.Name = "colTipoCarga";
-            this.colTipoCarga.Width = 200;
+            this.colTipoCarga.Width = 150;
             // 
             // ColPeso
             // 
             this.ColPeso.HeaderText = "Peso de la carga";
             this.ColPeso.Name = "ColPeso";
-            this.ColPeso.Width = 200;
+            this.ColPeso.Width = 150;
+            // 
+            // quitar
+            // 
+            this.quitar.HeaderText = "quitar";
+            this.quitar.Name = "quitar";
+            this.quitar.Text = "quitar";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 529);
+            this.ClientSize = new System.Drawing.Size(668, 598);
+            this.Controls.Add(this.txtPesoTotal);
+            this.Controls.Add(this.pesot);
             this.Controls.Add(this.tx);
             this.Controls.Add(this.dgvCargas);
             this.Controls.Add(this.button4);
@@ -240,6 +270,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            //this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,9 +294,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dgvCargas;
         private System.Windows.Forms.Button tx;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCarga;
+        private System.Windows.Forms.Label pesot;
+        private System.Windows.Forms.TextBox txtPesoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoCarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPeso;
+        private System.Windows.Forms.DataGridViewButtonColumn quitar;
     }
 }
 

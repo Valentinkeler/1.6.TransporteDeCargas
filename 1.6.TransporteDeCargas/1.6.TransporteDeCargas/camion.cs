@@ -28,24 +28,23 @@ namespace _1._6.TransporteDeCargas
             PesoMaximo = 0;
             Carga = new List<carga>();
         }
-        public string cargarCamion(carga CargaM)
+        public void cargarCamion(carga CargaM)
         {
-            int total = 0;
-            foreach (carga item in Carga)
-            {
-                if (PesoMaximo > total)
-                {
-                    Carga.Add(item);
-                    total += item.PesoCarga;
-                }
-            }
-            Estado = true;
-            return "este camion carga " + total + "kg";
+            Carga.Add(CargaM);
         }
         public void descargarCamion(int indice)
         {
             Carga.RemoveAt(indice);
-            Estado = false;
+
+        }
+        public int calcularPeso()
+        {
+            int total = 0;
+            foreach (carga item in Carga)
+            {
+                total += item.PesoCarga;
+            }
+            return total;
         }
 
         public bool confirmar()

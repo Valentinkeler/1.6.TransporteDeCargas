@@ -96,10 +96,6 @@ namespace _1._6.TransporteDeCargas
 
         }
 
-        private void txtPesoCarga_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void tx_Click(object sender, EventArgs e)
         {
@@ -117,8 +113,15 @@ namespace _1._6.TransporteDeCargas
                     , MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
+            if (txtPesoMax.Text == "" || !int.TryParse(txtPesoMax.Text, out _))
+            {
+                MessageBox.Show("escribir un peso maximo",
+                    "control"
+                    , MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
 
-            DataRowView item = (DataRowView)cboTipoCarga.SelectedItem;
+            DataRowView grilla = (DataRowView)cboTipoCarga.SelectedItem;
 
             tipoCarga tipoCarga = new tipoCarga();
 
@@ -126,15 +129,35 @@ namespace _1._6.TransporteDeCargas
             int pesoCarga = Convert.ToInt32(txtPesoCarga.Text);
 
             carga Carga = new carga(pesoCarga, tipoCarga);
-            oCamion.cargarCamion(Carga);
-            dgvCargas.Rows.Add(new object[] { txtPesoCarga.Text,cboTipoCarga.ValueMember });
+
+            if (oCamion.calcularPeso() < Convert.ToInt32(txtPesoMax.Text))
+            {
+                oCamion.cargarCamion(Carga);
+                dgvCargas.Rows.Add(new object[] { grilla.Row.ItemArray[0],grilla.Row.ItemArray[1], Carga.PesoCarga });
+
+                txtPesoTotal.Text = Convert.ToString(oCamion.calcularPeso());
+            }
+            else
+            {
+                MessageBox.Show("se pasa de peso",
+                    "control"
+                    , MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+            
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void dgvCargas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (dgvCargas.CurrentCell.ColumnIndex==3)
+            {
+                oCamion.descargarCamion(dgvCargas.CurrentRow.Index);
 
+                dgvCargas.Rows.Remove(dgvCargas.CurrentRow);
+
+                txtPesoTotal.Text =Convert.ToString(oCamion.calcularPeso()); 
+            }
         }
     }
 }
