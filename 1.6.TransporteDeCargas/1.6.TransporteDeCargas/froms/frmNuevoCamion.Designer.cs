@@ -1,6 +1,6 @@
 ﻿namespace _1._6.TransporteDeCargas
 {
-    partial class Form1
+    partial class frmNuevoCamion
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,9 +31,6 @@
             this.cboTipoCarga = new System.Windows.Forms.ComboBox();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.sa = new System.Windows.Forms.Label();
-            this.rbtDisponible = new System.Windows.Forms.RadioButton();
-            this.rbtOcupado = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPesoMax = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,20 +40,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dgvCargas = new System.Windows.Forms.DataGridView();
-            this.tx = new System.Windows.Forms.Button();
-            this.pesot = new System.Windows.Forms.Label();
-            this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quitar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tx = new System.Windows.Forms.Button();
+            this.pesot = new System.Windows.Forms.Label();
+            this.txtPesoTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).BeginInit();
             this.SuspendLayout();
             // 
             // cboTipoCarga
             // 
             this.cboTipoCarga.FormattingEnabled = true;
-            this.cboTipoCarga.Location = new System.Drawing.Point(113, 143);
+            this.cboTipoCarga.Location = new System.Drawing.Point(113, 109);
             this.cboTipoCarga.Name = "cboTipoCarga";
             this.cboTipoCarga.Size = new System.Drawing.Size(121, 21);
             this.cboTipoCarga.TabIndex = 1;
@@ -77,37 +74,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "patente";
             // 
-            // sa
-            // 
-            this.sa.AutoSize = true;
-            this.sa.Location = new System.Drawing.Point(48, 96);
-            this.sa.Name = "sa";
-            this.sa.Size = new System.Drawing.Size(39, 13);
-            this.sa.TabIndex = 4;
-            this.sa.Text = "estado";
-            // 
-            // rbtDisponible
-            // 
-            this.rbtDisponible.AutoSize = true;
-            this.rbtDisponible.Location = new System.Drawing.Point(113, 92);
-            this.rbtDisponible.Name = "rbtDisponible";
-            this.rbtDisponible.Size = new System.Drawing.Size(72, 17);
-            this.rbtDisponible.TabIndex = 5;
-            this.rbtDisponible.TabStop = true;
-            this.rbtDisponible.Text = "disponible";
-            this.rbtDisponible.UseVisualStyleBackColor = true;
-            // 
-            // rbtOcupado
-            // 
-            this.rbtOcupado.AutoSize = true;
-            this.rbtOcupado.Location = new System.Drawing.Point(210, 92);
-            this.rbtOcupado.Name = "rbtOcupado";
-            this.rbtOcupado.Size = new System.Drawing.Size(67, 17);
-            this.rbtOcupado.TabIndex = 6;
-            this.rbtOcupado.TabStop = true;
-            this.rbtOcupado.Text = "ocupado";
-            this.rbtOcupado.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -127,7 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 151);
+            this.label4.Location = new System.Drawing.Point(19, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 9;
@@ -136,7 +102,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 199);
+            this.label5.Location = new System.Drawing.Point(19, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 11;
@@ -144,25 +110,24 @@
             // 
             // txtPesoCarga
             // 
-            this.txtPesoCarga.Location = new System.Drawing.Point(113, 199);
+            this.txtPesoCarga.Location = new System.Drawing.Point(113, 164);
             this.txtPesoCarga.Name = "txtPesoCarga";
             this.txtPesoCarga.Size = new System.Drawing.Size(100, 20);
             this.txtPesoCarga.TabIndex = 10;
-            //this.txtPesoCarga.TextChanged += new System.EventHandler(this.txtPesoCarga_TextChanged);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(87, 494);
+            this.button5.Location = new System.Drawing.Point(99, 481);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 32);
             this.button5.TabIndex = 17;
             this.button5.Text = "nuevo";
             this.button5.UseVisualStyleBackColor = true;
-            //this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(272, 494);
+            this.button2.Location = new System.Drawing.Point(272, 472);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 19;
@@ -172,7 +137,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(465, 494);
+            this.button4.Location = new System.Drawing.Point(465, 472);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 32);
             this.button4.TabIndex = 21;
@@ -187,38 +152,11 @@
             this.colTipoCarga,
             this.ColPeso,
             this.quitar});
-            this.dgvCargas.Location = new System.Drawing.Point(99, 265);
+            this.dgvCargas.Location = new System.Drawing.Point(99, 235);
             this.dgvCargas.Name = "dgvCargas";
             this.dgvCargas.Size = new System.Drawing.Size(441, 150);
             this.dgvCargas.TabIndex = 22;
             this.dgvCargas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargas_CellContentClick);
-            // 
-            // tx
-            // 
-            this.tx.Location = new System.Drawing.Point(272, 178);
-            this.tx.Name = "tx";
-            this.tx.Size = new System.Drawing.Size(75, 23);
-            this.tx.TabIndex = 23;
-            this.tx.Text = "agregar";
-            this.tx.UseVisualStyleBackColor = true;
-            this.tx.Click += new System.EventHandler(this.tx_Click);
-            // 
-            // pesot
-            // 
-            this.pesot.AutoSize = true;
-            this.pesot.Location = new System.Drawing.Point(380, 441);
-            this.pesot.Name = "pesot";
-            this.pesot.Size = new System.Drawing.Size(56, 13);
-            this.pesot.TabIndex = 24;
-            this.pesot.Text = "peso total:";
-            // 
-            // txtPesoTotal
-            // 
-            this.txtPesoTotal.Enabled = false;
-            this.txtPesoTotal.Location = new System.Drawing.Point(442, 441);
-            this.txtPesoTotal.Name = "txtPesoTotal";
-            this.txtPesoTotal.Size = new System.Drawing.Size(98, 20);
-            this.txtPesoTotal.TabIndex = 25;
             // 
             // ID
             // 
@@ -244,11 +182,38 @@
             this.quitar.Name = "quitar";
             this.quitar.Text = "quitar";
             // 
+            // tx
+            // 
+            this.tx.Location = new System.Drawing.Point(272, 133);
+            this.tx.Name = "tx";
+            this.tx.Size = new System.Drawing.Size(75, 23);
+            this.tx.TabIndex = 23;
+            this.tx.Text = "agregar";
+            this.tx.UseVisualStyleBackColor = true;
+            this.tx.Click += new System.EventHandler(this.tx_Click);
+            // 
+            // pesot
+            // 
+            this.pesot.AutoSize = true;
+            this.pesot.Location = new System.Drawing.Point(380, 419);
+            this.pesot.Name = "pesot";
+            this.pesot.Size = new System.Drawing.Size(56, 13);
+            this.pesot.TabIndex = 24;
+            this.pesot.Text = "peso total:";
+            // 
+            // txtPesoTotal
+            // 
+            this.txtPesoTotal.Enabled = false;
+            this.txtPesoTotal.Location = new System.Drawing.Point(442, 416);
+            this.txtPesoTotal.Name = "txtPesoTotal";
+            this.txtPesoTotal.Size = new System.Drawing.Size(98, 20);
+            this.txtPesoTotal.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 598);
+            this.ClientSize = new System.Drawing.Size(596, 540);
             this.Controls.Add(this.txtPesoTotal);
             this.Controls.Add(this.pesot);
             this.Controls.Add(this.tx);
@@ -261,16 +226,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPesoMax);
-            this.Controls.Add(this.rbtOcupado);
-            this.Controls.Add(this.rbtDisponible);
-            this.Controls.Add(this.sa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.cboTipoCarga);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            //this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -281,9 +242,6 @@
         private System.Windows.Forms.ComboBox cboTipoCarga;
         private System.Windows.Forms.TextBox txtPatente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label sa;
-        private System.Windows.Forms.RadioButton rbtDisponible;
-        private System.Windows.Forms.RadioButton rbtOcupado;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPesoMax;
         private System.Windows.Forms.Label label4;

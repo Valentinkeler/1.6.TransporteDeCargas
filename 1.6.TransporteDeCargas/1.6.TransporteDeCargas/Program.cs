@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1._6.TransporteDeCargas.froms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace _1._6.TransporteDeCargas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmPrincipal());
         }
     }
 }

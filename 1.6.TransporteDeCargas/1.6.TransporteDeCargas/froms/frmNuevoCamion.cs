@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace _1._6.TransporteDeCargas
 {
-    public partial class Form1 : Form
+    public partial class frmNuevoCamion : Form
     {
         SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True");
         camion oCamion = new camion();
         
-        public Form1()
+        public frmNuevoCamion()
         {
             InitializeComponent();
         }
@@ -24,6 +24,7 @@ namespace _1._6.TransporteDeCargas
         private void Form1_Load(object sender, EventArgs e)
         {
             cargarCombo();
+            limpiar();
         }
 
         private void cargarCombo()
@@ -58,25 +59,16 @@ namespace _1._6.TransporteDeCargas
                     , MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
-            if (!rbtDisponible.Checked || !rbtOcupado.Checked)
-            {
-                MessageBox.Show("selecionar un estado",
-                    "control"
-                    , MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-
+            
             guardarCamion();
+            limpiar();
         }
 
         private void guardarCamion()
         {
             oCamion.Patente = txtPatente.Text;
             oCamion.PesoMaximo = Convert.ToInt32(txtPesoMax.Text);
-            if (rbtOcupado.Checked)
-            {
-                oCamion.Estado = false;
-            }
+           
 
             if (oCamion.confirmar())
             {
@@ -158,6 +150,21 @@ namespace _1._6.TransporteDeCargas
 
                 txtPesoTotal.Text =Convert.ToString(oCamion.calcularPeso()); 
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void limpiar()
+        {        
+            txtPatente.Text=String.Empty;
+            txtPesoCarga.Text = String.Empty;
+            txtPesoMax.Text = String.Empty;
+            txtPesoTotal.Text = String.Empty;
+            cboTipoCarga.SelectedIndex = 0;
+            dgvCargas.ClearSelection();
         }
     }
 }
