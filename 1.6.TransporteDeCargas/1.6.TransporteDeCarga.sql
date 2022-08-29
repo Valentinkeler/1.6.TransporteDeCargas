@@ -20,7 +20,7 @@ create	table	camion(
 idCamion	int	identity(1,1),
 patente	varchar(10),
 pesoMaximo	int,
-estado	bit,
+estado	varchar(50),
 constraint	IdCamion	primary	key(idCamion))
 
 insert	into	tipoCarga(tipoCarga)
@@ -40,7 +40,7 @@ as
 create	procedure	pa_insertarCamion
 	@patente	varchar(10),
 	@pesoMaximo	int,
-	@estado	bit,
+	@estado	varchar(50),
 	@idCamion	int	output
 as	
 	begin
@@ -60,10 +60,21 @@ as
 	end
 
 
-create	procedure	pa_mostrarCamion
+ALTER	procedure	[dbo].[pa_mostrarCamion]
 as
 	begin	
-		select	*	from	carga
+		select	DISTINCT	c.idCamion,patente,pesoMaximo,count(peso)
+		from	carga	ca	right	join	camion	c	on	c.idCamion=ca.idCamion		
+		where	estado='A'
+		group	by	c.idCamion,patente,pesoMaximo,peso
 	end
-
+	
+alter procedure bajaCamion
+@idCamion int
+as
+	begin
+		update camion
+		set	estado='B'
+		where idCamion=@idCamion
+	end
 

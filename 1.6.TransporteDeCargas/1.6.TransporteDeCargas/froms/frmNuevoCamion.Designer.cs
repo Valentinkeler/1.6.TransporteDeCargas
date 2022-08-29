@@ -40,13 +40,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dgvCargas = new System.Windows.Forms.DataGridView();
+            this.tx = new System.Windows.Forms.Button();
+            this.pesot = new System.Windows.Forms.Label();
+            this.txtPesoTotal = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quitar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tx = new System.Windows.Forms.Button();
-            this.pesot = new System.Windows.Forms.Label();
-            this.txtPesoTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,6 +143,7 @@
             this.button4.TabIndex = 21;
             this.button4.Text = "salir";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dgvCargas
             // 
@@ -157,30 +158,6 @@
             this.dgvCargas.Size = new System.Drawing.Size(441, 150);
             this.dgvCargas.TabIndex = 22;
             this.dgvCargas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargas_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
-            // colTipoCarga
-            // 
-            this.colTipoCarga.HeaderText = "TipoCarga";
-            this.colTipoCarga.Name = "colTipoCarga";
-            this.colTipoCarga.Width = 150;
-            // 
-            // ColPeso
-            // 
-            this.ColPeso.HeaderText = "Peso de la carga";
-            this.ColPeso.Name = "ColPeso";
-            this.ColPeso.Width = 150;
-            // 
-            // quitar
-            // 
-            this.quitar.HeaderText = "quitar";
-            this.quitar.Name = "quitar";
-            this.quitar.Text = "quitar";
             // 
             // tx
             // 
@@ -209,7 +186,31 @@
             this.txtPesoTotal.Size = new System.Drawing.Size(98, 20);
             this.txtPesoTotal.TabIndex = 25;
             // 
-            // Form1
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // colTipoCarga
+            // 
+            this.colTipoCarga.HeaderText = "TipoCarga";
+            this.colTipoCarga.Name = "colTipoCarga";
+            this.colTipoCarga.Width = 150;
+            // 
+            // ColPeso
+            // 
+            this.ColPeso.HeaderText = "Peso de la carga";
+            this.ColPeso.Name = "ColPeso";
+            this.ColPeso.Width = 150;
+            // 
+            // quitar
+            // 
+            this.quitar.HeaderText = "quitar";
+            this.quitar.Name = "quitar";
+            this.quitar.Text = "quitar";
+            // 
+            // frmNuevoCamion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +230,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.cboTipoCarga);
-            this.Name = "Form1";
+            this.Name = "frmNuevoCamion";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargas)).EndInit();

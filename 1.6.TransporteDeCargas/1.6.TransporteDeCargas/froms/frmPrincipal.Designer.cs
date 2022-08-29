@@ -99,6 +99,7 @@
             this.eliminarCamionToolStripMenuItem.Name = "eliminarCamionToolStripMenuItem";
             this.eliminarCamionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eliminarCamionToolStripMenuItem.Text = "eliminarCamion";
+            this.eliminarCamionToolStripMenuItem.Click += new System.EventHandler(this.eliminarCamionToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

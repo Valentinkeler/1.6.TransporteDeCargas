@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using _1._6.TransporteDeCargas.datos;
 
 namespace _1._6.TransporteDeCargas
 {
     public partial class frmNuevoCamion : Form
     {
-        SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True");
+        accesoDatos oDatos = new accesoDatos();
         camion oCamion = new camion();
-        
+
         public frmNuevoCamion()
         {
             InitializeComponent();
@@ -23,21 +23,13 @@ namespace _1._6.TransporteDeCargas
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargarCombo();
+            cargarCombo("pa_consultarTipoCarga");
             limpiar();
         }
 
-        private void cargarCombo()
+        public void cargarCombo(string SP)
         {
-            DataTable  tabla = new DataTable();
-            conexion.Open();
-            SqlCommand comando = new SqlCommand("pa_consultarTipoCarga", conexion);
-            comando.CommandType = CommandType.StoredProcedure;
-
-            tabla.Load(comando.ExecuteReader());
-
-            conexion.Close();
-
+            DataTable tabla = oDatos.reader(SP);
             cboTipoCarga.DataSource = tabla;
             cboTipoCarga.DisplayMember = "tipoCarga";
             cboTipoCarga.ValueMember = "codigoTipoCarga";
@@ -65,18 +57,17 @@ namespace _1._6.TransporteDeCargas
         }
 
         private void guardarCamion()
-        {
+        {     
             oCamion.Patente = txtPatente.Text;
             oCamion.PesoMaximo = Convert.ToInt32(txtPesoMax.Text);
            
 
-            if (oCamion.confirmar())
+            if (oDatos.maestroDetalle(oCamion))
             {
                 MessageBox.Show("el camion  se  cargo   correctamente",
                     "informe"
                     , MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                this.Dispose();
+                    MessageBoxIcon.Information);               
             }
             else
             {
@@ -88,10 +79,9 @@ namespace _1._6.TransporteDeCargas
 
         }
 
-
         private void tx_Click(object sender, EventArgs e)
         {
-            if (cboTipoCarga.SelectedIndex==0)
+            if (cboTipoCarga.SelectedIndex==-1)
             {
                 MessageBox.Show("seleccionar un tipo de carga",
                     "control"
@@ -117,7 +107,7 @@ namespace _1._6.TransporteDeCargas
 
             tipoCarga tipoCarga = new tipoCarga();
 
-            tipoCarga.TipoCarga =Convert.ToInt32(cboTipoCarga.SelectedValue);
+            tipoCarga.TipoCarga =Convert.ToInt32(grilla.Row[0]);
             int pesoCarga = Convert.ToInt32(txtPesoCarga.Text);
 
             carga Carga = new carga(pesoCarga, tipoCarga);
@@ -164,7 +154,12 @@ namespace _1._6.TransporteDeCargas
             txtPesoMax.Text = String.Empty;
             txtPesoTotal.Text = String.Empty;
             cboTipoCarga.SelectedIndex = 0;
-            dgvCargas.ClearSelection();
+            dgvCargas.Rows.Clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

@@ -22,5 +22,11 @@ namespace _1._6.TransporteDeCargas.froms
             frmNuevoCamion  nuevoCamion=new frmNuevoCamion();
             nuevoCamion.ShowDialog();
         }
+
+        private void eliminarCamionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBajaCamion BajaCamion=new frmBajaCamion();
+            BajaCamion.ShowDialog();
+        }
     }
 }

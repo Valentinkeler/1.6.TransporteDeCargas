@@ -32,3 +32,4 @@ C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.Tran
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.pdb
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.frmNuevoCamion.resources
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmPrincipal.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmBajaCamion.resources
