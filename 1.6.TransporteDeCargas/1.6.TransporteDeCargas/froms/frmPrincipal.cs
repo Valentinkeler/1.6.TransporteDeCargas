@@ -28,5 +28,17 @@ namespace _1._6.TransporteDeCargas.froms
             frmBajaCamion BajaCamion=new frmBajaCamion();
             BajaCamion.ShowDialog();
         }
+
+        private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteTipoCarga reporTipoCarga=new frmReporteTipoCarga();
+            reporTipoCarga.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmReporteCamion reportCamion=new frmReporteCamion();
+            reportCamion.ShowDialog();
+        }
     }
 }

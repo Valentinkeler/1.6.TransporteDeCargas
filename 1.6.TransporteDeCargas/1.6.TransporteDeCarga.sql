@@ -69,12 +69,23 @@ as
 		group	by	c.idCamion,patente,pesoMaximo,peso
 	end
 	
-alter procedure bajaCamion
+alter procedure pa_BajaCamion
 @idCamion int
 as
 	begin
 		update camion
 		set	estado='B'
 		where idCamion=@idCamion
+	end
+
+
+create	procedure	SP_Reporte_camion
+as
+	begin
+		select	ca.idCamion 'camion',patente 'patente',sum(peso)	'peso del camion', pesoMaximo 'peso maximo del camion'
+		from	carga	c	join	camion	ca	on	ca.idCamion=c.idCamion
+		where	estado	='A'
+		group	by	ca.idCamion,patente,pesoMaximo
+		having SUM(peso)<100000
 	end
 

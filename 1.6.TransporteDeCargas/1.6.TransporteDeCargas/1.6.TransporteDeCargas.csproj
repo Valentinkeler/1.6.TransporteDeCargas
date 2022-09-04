@@ -85,19 +85,30 @@
     <Compile Include="froms\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="froms\frmReporteCamion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="froms\frmReporteCamion.Designer.cs">
+      <DependentUpon>frmReporteCamion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="froms\frmReporteTipoCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="froms\frmReporteTipoCarga.Designer.cs">
+      <DependentUpon>frmReporteTipoCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="dominios\tipoCarga.cs" />
-    <Compile Include="reports\DataSet1.Designer.cs">
+    <Compile Include="reports\DSCamion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>DSCamion.xsd</DependentUpon>
     </Compile>
-    <Compile Include="reports\reportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="reports\reportes.Designer.cs">
-      <DependentUpon>reportes.cs</DependentUpon>
+    <Compile Include="reports\dsTipoCarga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTipoCarga.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="froms\frmBajaCamion.resx">
@@ -109,6 +120,12 @@
     <EmbeddedResource Include="froms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="froms\frmReporteCamion.resx">
+      <DependentUpon>frmReporteCamion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="froms\frmReporteTipoCarga.resx">
+      <DependentUpon>frmReporteTipoCarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,10 +135,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reports\Report1.rdlc" />
-    <EmbeddedResource Include="reports\reportes.resx">
-      <DependentUpon>reportes.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptCamion.rdlc" />
+    <EmbeddedResource Include="reports\rptTipoCarga.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,16 +147,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="reports\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="reports\DSCamion.xsc">
+      <DependentUpon>DSCamion.xsd</DependentUpon>
     </None>
-    <None Include="reports\DataSet1.xsd">
+    <None Include="reports\DSCamion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSCamion.Designer.cs</LastGenOutput>
     </None>
-    <None Include="reports\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="reports\DSCamion.xss">
+      <DependentUpon>DSCamion.xsd</DependentUpon>
+    </None>
+    <None Include="reports\dsTipoCarga.xsc">
+      <DependentUpon>dsTipoCarga.xsd</DependentUpon>
+    </None>
+    <None Include="reports\dsTipoCarga.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTipoCarga.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="reports\dsTipoCarga.xss">
+      <DependentUpon>dsTipoCarga.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -162,5 +188,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
