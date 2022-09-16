@@ -8,17 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using _1._6.TransporteDeCargas.datos;
+using _1._6.TransporteDeCargas.sevicios;
 
 namespace _1._6.TransporteDeCargas
 {
     public partial class frmNuevoCamion : Form
     {
-        accesoDatos oDatos = new accesoDatos();
-        camion oCamion = new camion();
+        servicio servicio;
+        camion oCamion;
 
         public frmNuevoCamion()
         {
             InitializeComponent();
+            servicio = new servicio(new daoFactory());
+            oCamion = new camion();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace _1._6.TransporteDeCargas
 
         public void cargarCombo(string SP)
         {
-            DataTable tabla = oDatos.reader(SP);
+            DataTable tabla = servicio.reader(SP);
             cboTipoCarga.DataSource = tabla;
             cboTipoCarga.DisplayMember = "tipoCarga";
             cboTipoCarga.ValueMember = "codigoTipoCarga";
@@ -62,7 +65,7 @@ namespace _1._6.TransporteDeCargas
             oCamion.PesoMaximo = Convert.ToInt32(txtPesoMax.Text);
            
 
-            if (oDatos.maestroDetalle(oCamion))
+            if (servicio.maestroDetalle(oCamion))
             {
                 MessageBox.Show("el camion  se  cargo   correctamente",
                     "informe"

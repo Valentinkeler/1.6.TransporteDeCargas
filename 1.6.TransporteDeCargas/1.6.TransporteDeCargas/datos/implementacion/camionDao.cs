@@ -1,31 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace _1._6.TransporteDeCargas.datos
 {
-    internal class accesoDatos
+    internal class camionDao : IcamionDao
     {
-        SqlConnection cnn=new   SqlConnection(@"Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True");
-        
+        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True");
+
 
 
         public DataTable reader(string SP)
         {
-            DataTable tabla = new DataTable();
-            cnn.Open();
-            SqlCommand comando = new SqlCommand(SP, cnn);
-            comando.CommandType = CommandType.StoredProcedure;
-
-            tabla.Load(comando.ExecuteReader());
-
-            cnn.Close();
-            return tabla;
+            return  helperDao.obtenerInstancia().reader(SP);
         }
 
         public bool maestroDetalle(camion oCamion)
@@ -78,17 +69,9 @@ namespace _1._6.TransporteDeCargas.datos
             }
             return Estado;
         }
-        public  void bajaLogica(string  SP,int idCamion)
+        public void bajaLogica(string SP, int idCamion)
         {
-            cnn.Open();
-            SqlCommand comando = new SqlCommand(SP, cnn);
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idCamion", idCamion);
-
-
-            comando.ExecuteNonQuery();
-
-            cnn.Close();
+           helperDao.obtenerInstancia().BajaLogica(SP, idCamion);
         }
         //public void cargarGrilla(string SP,DataGridView grilla)
         //{

@@ -96,3 +96,15 @@ C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.Tran
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.csproj.CopyComplete
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmReporteCamion.resources
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmReporteTipoCarga.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.csproj.AssemblyReference.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.csproj.SuggestedBindingRedirects.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmBajaCamion.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.frmNuevoCamion.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmPrincipal.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmReporteCamion.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.froms.frmReporteTipoCarga.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\_1._6.TransporteDeCargas.Properties.Resources.resources
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.csproj.GenerateResource.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.csproj.CoreCompileInputs.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.exe
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas(reports)\1.6.TransporteDeCargas\1.6.TransporteDeCargas\obj\Debug\1.6.TransporteDeCargas.pdb

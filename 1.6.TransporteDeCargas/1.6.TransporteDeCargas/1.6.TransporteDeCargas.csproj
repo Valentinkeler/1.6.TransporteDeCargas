@@ -64,7 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="datos\accesoDatos.cs" />
+    <Compile Include="datos\AbstractDaoFactory.cs" />
+    <Compile Include="datos\daoFactory.cs" />
+    <Compile Include="datos\helperDao.cs" />
+    <Compile Include="datos\implementacion\camionDao.cs" />
+    <Compile Include="datos\interface\IcamionDao.cs" />
     <Compile Include="dominios\camion.cs" />
     <Compile Include="dominios\carga.cs" />
     <Compile Include="froms\frmBajaCamion.cs">
@@ -110,6 +114,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTipoCarga.xsd</DependentUpon>
     </Compile>
+    <Compile Include="sevicios\servicio.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="froms\frmBajaCamion.resx">
       <DependentUpon>frmBajaCamion.cs</DependentUpon>
