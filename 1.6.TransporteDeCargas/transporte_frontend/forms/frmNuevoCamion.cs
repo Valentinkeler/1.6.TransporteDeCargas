@@ -25,20 +25,15 @@ namespace transporte_frontend
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargarCombo();
+            cargarComboAsync();
             limpiar();
         }
 
-        public async void cargarCombo(string SP)
+        public async void cargarComboAsync()
         {
             string url = "http://localhost:5031/camion";
             var result = await  clientSingelton.getInstance().GetAsync(url);
-            var lst =   JsonConvert.Dese
-            
-
-            string url = ""
-
-            clientSingelton.getInstance().GetAsync();
+            var lst =   JsonConvert.DeserializeObject<List<camion>>(result);
 
             cboTipoCarga.DataSource = lst;
             cboTipoCarga.DisplayMember = "tipoCarga";
@@ -62,30 +57,34 @@ namespace transporte_frontend
                     MessageBoxIcon.Exclamation);
             }
             
-            guardarCamion();
+            guardarCamionAsync();
             limpiar();
         }
 
-        private void guardarCamion()
+        private async void guardarCamionAsync()
         {     
             oCamion.Patente = txtPatente.Text;
             oCamion.PesoMaximo = Convert.ToInt32(txtPesoMax.Text);
-           
+            var bodyContent = JsonConvert.SerializeObject(oCamion);
 
-            //if (servicio.maestroDetalle(oCamion))
-            //{
-            //    MessageBox.Show("el camion  se  cargo   correctamente",
-            //        "informe"
-            //        , MessageBoxButtons.OK,
-            //        MessageBoxIcon.Information);               
-            //}
-            //else
-            //{
-            //    MessageBox.Show("error  al  cargar  camion  en  la  BD",
-            //        "error"
-            //        , MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error);
-            //}
+            string url = "http://localhost:5031/transporte";
+
+            var result = await clientSingelton.getInstance().postAsync(url,bodyContent);
+
+            if (result.Equals("true"))
+            {
+                MessageBox.Show("el camion  se  cargo   correctamente",
+                    "informe"
+                    , MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("error  al  cargar  camion  en  la  BD",
+                    "error"
+                    , MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
 
         }
 
