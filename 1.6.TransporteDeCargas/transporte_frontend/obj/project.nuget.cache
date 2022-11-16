@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DmJOmMkqybzNToMKu+PFgWcsExdbH+gQy7O2K7nprcuu5He+O9KK1Zv4dmL4rOx6i2Euk5f086mhKxPqyvnPVw==",
+  "dgSpecHash": "8/kVz1ksyoRUlMIid1WxsDyp3CE0wOwQdW2FA0Yini10qqpSW+kYAK68CdVk71890SlqWPtBY9XbaqzYTc/PQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\valentin\\Desktop\\1.6.TransporteDeCargas\\1.6.TransporteDeCargas\\transporte_frontend\\transporte_frontend.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\valentin\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1537.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1537.0.nupkg.sha512",
     "C:\\Users\\valentin\\.nuget\\packages\\microsoft.sqlserver.types\\14.0.314.76\\microsoft.sqlserver.types.14.0.314.76.nupkg.sha512",
     "C:\\Users\\valentin\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\valentin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\valentin\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\valentin\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\valentin\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using transporte_datos;
-
+using transporte_frontend.Http;
 
 namespace transporte_frontend
 {
@@ -24,17 +25,25 @@ namespace transporte_frontend
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //cargarCombo("pa_consultarTipoCarga");
+            cargarCombo();
             limpiar();
         }
 
-        //public void cargarCombo(string SP)
-        //{
-        //    //DataTable tabla = servicio.reader(SP);
-        //    cboTipoCarga.DataSource = tabla;
-        //    cboTipoCarga.DisplayMember = "tipoCarga";
-        //    cboTipoCarga.ValueMember = "codigoTipoCarga";
-        //}
+        public async void cargarCombo(string SP)
+        {
+            string url = "http://localhost:5031/camion";
+            var result = await  clientSingelton.getInstance().GetAsync(url);
+            var lst =   JsonConvert.Dese
+            
+
+            string url = ""
+
+            clientSingelton.getInstance().GetAsync();
+
+            cboTipoCarga.DataSource = lst;
+            cboTipoCarga.DisplayMember = "tipoCarga";
+            cboTipoCarga.ValueMember = "codigoTipoCarga";
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -7,3 +7,4 @@ C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transpor
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_frontend\obj\Debug\net6.0-windows\transporte_frontend.AssemblyInfoInputs.cache
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_frontend\obj\Debug\net6.0-windows\transporte_frontend.AssemblyInfo.cs
 C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_frontend\obj\Debug\net6.0-windows\transporte_frontend.csproj.CoreCompileInputs.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_frontend\obj\Debug\net6.0-windows\transporte_frontend.froms.Principal.resources

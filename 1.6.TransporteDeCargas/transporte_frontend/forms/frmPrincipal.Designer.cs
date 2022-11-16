@@ -1,6 +1,6 @@
 ﻿namespace transporte_frontend.froms
 {
-    partial class Form1
+    partial class Principal
     {
         /// <summary>
         /// Required designer variable.
