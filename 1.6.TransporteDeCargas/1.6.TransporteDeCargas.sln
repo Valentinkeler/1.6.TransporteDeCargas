@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.6.TransporteDeCargas", "1.6.TransporteDeCargas\1.6.TransporteDeCargas.csproj", "{41DF1717-7E5A-4434-AF2B-DE9E6B8456A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transporte_datos", "transporte_datos\transporte_datos.csproj", "{F6BAC446-CD25-4027-881F-FBF0D85FC80D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transporte_webApi", "transporte_webApi\transporte_webApi.csproj", "{43CB02F1-8642-40F0-988F-E5224A9BE1EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{41DF1717-7E5A-4434-AF2B-DE9E6B8456A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41DF1717-7E5A-4434-AF2B-DE9E6B8456A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41DF1717-7E5A-4434-AF2B-DE9E6B8456A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BAC446-CD25-4027-881F-FBF0D85FC80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BAC446-CD25-4027-881F-FBF0D85FC80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BAC446-CD25-4027-881F-FBF0D85FC80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BAC446-CD25-4027-881F-FBF0D85FC80D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43CB02F1-8642-40F0-988F-E5224A9BE1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43CB02F1-8642-40F0-988F-E5224A9BE1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43CB02F1-8642-40F0-988F-E5224A9BE1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43CB02F1-8642-40F0-988F-E5224A9BE1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
