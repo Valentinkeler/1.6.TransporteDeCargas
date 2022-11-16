@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace transporte_datos.facade
 {
-    public interface IdataApi
+    internal class DataApiFactory : abstractDataApiFactory
     {
-        public List<camion> GetCamion();
-        public bool PostCamion(camion ocamion);
-        public object DeleteLogico(int id_camion);
+        public override dataApi crearDataApi()
+        {
+            return new dataApi();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace transporte_datos.datos
         private SqlConnection cnn;
         private helperDao()
         {
-            cnn = "";
+            cnn.ConnectionString = "Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True";
         }
         public  static  helperDao obtenerInstancia()
         {
@@ -48,14 +48,14 @@ namespace transporte_datos.datos
 
             cnn.Close();
         }
-        public  bool maestroDetalle(camion  oCamion)
+        public  bool maestroDetalle(camion  oCamion,string spMaestro,string spDetalle)
         {
             bool Estado = true;
             SqlTransaction t = null;
             try
             {
                 cnn.Open();
-                SqlCommand comando = new SqlCommand("pa_insertarCamion", cnn);
+                SqlCommand comando = new SqlCommand(spMaestro, cnn);
                 t = cnn.BeginTransaction();
                 comando.Transaction = t;
                 comando.CommandType = CommandType.StoredProcedure;
@@ -73,7 +73,7 @@ namespace transporte_datos.datos
 
                 foreach (carga item in oCamion.Carga)
                 {
-                    SqlCommand cmd = new SqlCommand("pa_insertarCarga", cnn);
+                    SqlCommand cmd = new SqlCommand(spDetalle, cnn);
                     cmd.Transaction = t;
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@peso", item.PesoCarga);

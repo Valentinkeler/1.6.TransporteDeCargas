@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using transporte_datos;
+using transporte_datos.facade;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +10,61 @@ namespace transporte_webApi.Controllers
     [ApiController]
     public class CamionController : ControllerBase
     {
-        // GET: api/<CamionController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private IdataApi datosApi;
+
+        public CamionController(abstractDataApiFactory  factory)
         {
-            return new string[] { "value1", "value2" };
+           
+            datosApi = factory.crearDataApi();
         }
 
-        // GET api/<CamionController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET: api/<CamionController>
+        [HttpGet("/camion")]
+        public IActionResult GetCamion()
         {
-            return "value";
+            List<camion> lst = null;
+            try
+            {
+
+                lst = datosApi.GetCamion();
+                return Ok(lst);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
         }
 
         // POST api/<CamionController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("/transporte")]
+        public IActionResult PostCamion(camion Ocamion)
         {
-        }
+            try
+            {
+                if (Ocamion==null)
+                {
+                    return BadRequest("Datos de presupuesto incorrectos!");
+                }
 
-        // PUT api/<CamionController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
+                return Ok(datosApi.PostCamion(Ocamion));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "error interno");
+            }
         }
 
         // DELETE api/<CamionController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult DeleteLogico(int id)
         {
+            if (id == 0)
+                return BadRequest("idmal");
+
+            return Ok(datosApi.DeleteLogico(id));
+                        
         }
     }
 }

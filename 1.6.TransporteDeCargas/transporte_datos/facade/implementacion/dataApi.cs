@@ -3,30 +3,28 @@ using System.Data;
 
 namespace transporte_datos.facade
 {
-    internal class dataApi
+    public class dataApi:IdataApi
     {
         private IcamionDao datos;
 
-        public  dataApi(AbstractDaoFactory factory)
+        public  dataApi()
         {
-            datos   =   factory.crearAccesoDatos();
+            datos = new camionDao();
         }
 
-        public dataApi()
+        public List<camion> GetCamion()
         {
+            return datos.reader();
         }
-
-        public DataTable    reader(string    SP)
-        {
-            return datos.reader(SP);
-        }
-        public  bool maestroDetalle(camion  ocamion)
+        public  bool PostCamion(camion  ocamion)
         {
             return datos.maestroDetalle(ocamion);
         }
-        public  void bajaLogica(string  SP,int id_camion)
+        public  void DeleteLogico(int id_camion)
         {
-            datos.bajaLogica(SP,id_camion);
+            datos.bajaLogica(id_camion);
         }
+
+
     }
 }

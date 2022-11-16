@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace transporte_datos.datos
+namespace transporte_datos.facade
 {
-    abstract class AbstractDaoFactory
+    public  abstract class abstractDataApiFactory
     {
-        abstract public IcamionDao  crearAccesoDatos();
+
+        public abstract dataApi crearDataApi();
+
     }
 }

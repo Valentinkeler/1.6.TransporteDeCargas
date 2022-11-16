@@ -10,23 +10,36 @@ namespace transporte_datos.datos
 {
     public class camionDao : IcamionDao
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-EU00IF5;Initial Catalog=113151-Keler-TransporteDeCarga;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection();
 
 
 
-        public DataTable reader(string SP)
+        public List<camion> reader()
         {
-            return  helperDao.obtenerInstancia().reader(SP);
+            List<camion> lst = new List<camion>();
+
+            DataTable tabla= helperDao.obtenerInstancia().reader("pa_mostrarCamion");
+
+            foreach (DataRow item in tabla.Rows)
+            {
+                int idCamion = Convert.ToInt32(item["idCamion"]);
+                string patente= item["patente"].ToString();
+                int pesoMax= Convert.ToInt32(item["pesoMaximo"]);
+                bool  estado  =  Convert.ToBoolean(item["estado"]);
+                camion oCamion = new camion(patente,estado,pesoMax);
+                lst.Add(oCamion);
+            }
+            return lst;
         }
 
         public bool maestroDetalle(camion oCamion)
         {
-            return  helperDao.obtenerInstancia().maestroDetalle(oCamion);
+            return  helperDao.obtenerInstancia().maestroDetalle(oCamion,"pa_insertarCamion", "pa_insertarCarga");
             
         }
-        public void bajaLogica(string SP, int idCamion)
+        public void bajaLogica(int idCamion)
         {
-           helperDao.obtenerInstancia().BajaLogica(SP, idCamion);
+           helperDao.obtenerInstancia().BajaLogica("bajaCamion", idCamion);
         }
      
     }
