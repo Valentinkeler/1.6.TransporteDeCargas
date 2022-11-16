@@ -1,0 +1,6 @@
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.csproj.AssemblyReference.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.AssemblyInfoInputs.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.AssemblyInfo.cs
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.csproj.CoreCompileInputs.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_webApi\obj\Debug\net6.0\transporte_webApi.MvcApplicationPartsAssemblyInfo.cache

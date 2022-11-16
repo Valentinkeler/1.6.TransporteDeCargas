@@ -1,4 +1,4 @@
-﻿namespace _1._6.TransporteDeCargas
+﻿namespace transporte_frontend
 {
     partial class frmNuevoCamion
     {

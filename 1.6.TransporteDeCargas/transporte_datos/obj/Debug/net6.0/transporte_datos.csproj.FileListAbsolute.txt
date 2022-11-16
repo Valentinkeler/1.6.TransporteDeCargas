@@ -1,0 +1,5 @@
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_datos\obj\Debug\net6.0\transporte_datos.csproj.AssemblyReference.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_datos\obj\Debug\net6.0\transporte_datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_datos\obj\Debug\net6.0\transporte_datos.AssemblyInfoInputs.cache
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_datos\obj\Debug\net6.0\transporte_datos.AssemblyInfo.cs
+C:\Users\valentin\Desktop\1.6.TransporteDeCargas\1.6.TransporteDeCargas\transporte_datos\obj\Debug\net6.0\transporte_datos.csproj.CoreCompileInputs.cache

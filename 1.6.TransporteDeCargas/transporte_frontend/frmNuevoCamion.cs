@@ -7,36 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using transporte_frontend.datos;
-using transporte_frontend.sevicios;
+using transporte_datos;
+
 
 namespace transporte_frontend
 {
     public partial class frmNuevoCamion : Form
     {
-        servicio servicio;
         camion oCamion;
 
         public frmNuevoCamion()
         {
             InitializeComponent();
-            servicio = new servicio(new daoFactory());
             oCamion = new camion();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargarCombo("pa_consultarTipoCarga");
+            //cargarCombo("pa_consultarTipoCarga");
             limpiar();
         }
 
-        public void cargarCombo(string SP)
-        {
-            DataTable tabla = servicio.reader(SP);
-            cboTipoCarga.DataSource = tabla;
-            cboTipoCarga.DisplayMember = "tipoCarga";
-            cboTipoCarga.ValueMember = "codigoTipoCarga";
-        }
+        //public void cargarCombo(string SP)
+        //{
+        //    //DataTable tabla = servicio.reader(SP);
+        //    cboTipoCarga.DataSource = tabla;
+        //    cboTipoCarga.DisplayMember = "tipoCarga";
+        //    cboTipoCarga.ValueMember = "codigoTipoCarga";
+        //}
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -65,20 +63,20 @@ namespace transporte_frontend
             oCamion.PesoMaximo = Convert.ToInt32(txtPesoMax.Text);
            
 
-            if (servicio.maestroDetalle(oCamion))
-            {
-                MessageBox.Show("el camion  se  cargo   correctamente",
-                    "informe"
-                    , MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);               
-            }
-            else
-            {
-                MessageBox.Show("error  al  cargar  camion  en  la  BD",
-                    "error"
-                    , MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            //if (servicio.maestroDetalle(oCamion))
+            //{
+            //    MessageBox.Show("el camion  se  cargo   correctamente",
+            //        "informe"
+            //        , MessageBoxButtons.OK,
+            //        MessageBoxIcon.Information);               
+            //}
+            //else
+            //{
+            //    MessageBox.Show("error  al  cargar  camion  en  la  BD",
+            //        "error"
+            //        , MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error);
+            //}
 
         }
 
